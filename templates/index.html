@@ -1,0 +1,37 @@
+<body>
+	<h1>{{ title }}</h1>
+	<p>{{ message }}</p>
+	<form action="/" method="GET" enctype="multipart/form-data">
+		<div>
+      <label for="month">月:</label>
+      <input type="text" name="month" size="20" maxlength = "2">
+      <label for="day">日:</label>
+      <input type="text" name="day" size="20" maxlength = "2">
+ 
+      <label for="jikan">◯時間目:</label>
+      <input type="text" name="jikan" size="20" maxlength = "1">
+      <br>
+			<label for="name">教科担からのコメント：</label>
+			<textarea name="name"></textarea >
+      <br>
+      <label for="j">授業規範</label>
+      <input type="text" name="j" size="5" maxlength = "1">
+      <label for="k">聞く</label>
+      <input type="text" name="k" size="5" maxlength = "1">
+      <label for="h">話す</label>
+      <input type="text" name="h" size="5" maxlength = "1">
+      <label for="next">次回の学習内容</label>
+      <textarea name="next"></textarea ></div>
+      <label for="yokatta">授業の中で良かった姿</label>
+      <textarea name="yokatta"></textarea ></div>
+      <label for="shuku">宿題</label>
+      <input type="text" name="shuku" size="30">
+      <label for="mochi">持ち物</label>
+      <input type="text" name="mochi" size="30">
+    </div>
+      
+		<div>
+			<input type="submit" value="送信">
+		</div>
+	</form>
+</body>
