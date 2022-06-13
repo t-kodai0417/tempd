@@ -27,4 +27,4 @@ def aaa():
 
 # postのときの処理	
 
-app.run("0.0.0.0",port=8080)
+app.run()
