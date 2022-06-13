@@ -1,1 +1,1 @@
-web: gunicorn main:app
+discordbot: python main.py
