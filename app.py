@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request,redirect
-import create
+import create,os
 app = Flask(__name__)
 
 # getのときの処理
@@ -27,4 +27,4 @@ def aaa():
 
 # postのときの処理	
 
-app.run("0.0.0.0")
+app.run("0.0.0.0",port=os.getenv("PORT"))
