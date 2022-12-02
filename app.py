@@ -7,7 +7,13 @@ app = Flask(__name__)
 def get():
   t_delta = datetime.timedelta(hours=9)
   dt = datetime.datetime.now(datetime.timezone.utc)+t_delta
-  dt_text = f"{dt.month}/{dt.day} {dt.hour}:{dt.minute}"
+  if dt.minute == 0:
+    d_minute="00"
+  elif dt.minute < 10:
+    d_minute=f"0{dt.minute}"
+  else:
+    d_minute=dt.minute
+  dt_text = f"{dt.month}/{dt.day} {dt.hour}:{d_minute}"
   
   data1 =request.args.get('name', '')
   if data1=="":
