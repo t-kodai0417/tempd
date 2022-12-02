@@ -26,7 +26,8 @@ def get():
 def aaa():
   t_delta = datetime.timedelta(hours=9)
   dt = datetime.datetime.now(datetime.timezone.utc)+t_delta
-  return render_template("index.html",d_month=dt.month,d_day=dt.day)
+  dt_text = f"{dt.month}/{dt.day} {dt.minute}:{dt.second}"
+  return render_template("index.html",d_month=dt.month,d_day=dt.day,d_time)
 
 
 # postのときの処理	
