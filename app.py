@@ -7,7 +7,7 @@ app = Flask(__name__)
 def get():
   t_delta = datetime.timedelta(hours=9)
   dt = datetime.datetime.now(datetime.timezone.utc)+t_delta
-  dt_text = f"{dt.month}/{dt.day} {dt.minute}:{dt.second}"
+  dt_text = f"{dt.month}/{dt.day} {dt.hour}:{dt.minute}"
   
   data1 =request.args.get('name', '')
   if data1=="":
@@ -28,7 +28,7 @@ def get():
 def aaa():
   t_delta = datetime.timedelta(hours=9)
   dt = datetime.datetime.now(datetime.timezone.utc)+t_delta
-  dt_text = f"{dt.month}/{dt.day} {dt.minute}:{dt.second}"
+  dt_text = f"{dt.month}/{dt.day} {dt.hour}:{dt.minute}"
   return render_template("index.html",d_month=dt.month,d_day=dt.day,d_time=dt_text)
 
 
