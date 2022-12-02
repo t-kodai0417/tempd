@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request,redirect
-import create,os
+import create,os,datetime
 app = Flask(__name__)
 
 # getのときの処理
@@ -22,7 +22,9 @@ def get():
   return redirect('/static/response.png')
 @app.route('/')
 def aaa():
-  return render_template("index.html")
+  t_delta = datetime.timedelta(hours=9)
+  dt = datetime.datetime.now(datetime.timezone.utc)+t_delta
+  return render_template("index.html",month=str(dt.month),day=str(dt.day))
 
 
 # postのときの処理	
