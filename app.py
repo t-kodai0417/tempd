@@ -5,9 +5,11 @@ app = Flask(__name__)
 # getのときの処理
 @app.route('/', methods=['GET'])
 def get():
+  t_delta = datetime.timedelta(hours=9)
+  dt = datetime.datetime.now(datetime.timezone.utc)+t_delta
   data1 =request.args.get('name', '')
   if data1=="":
-    return render_template("index.html")
+    return render_template("index.html",d_month=dt.month,d_day=dt.day)
   hyouka1 =request.args.get('j', '')
   hyouka2=request.args.get("k","")
   hyouka3=request.args.get("h","")
@@ -24,7 +26,7 @@ def get():
 def aaa():
   t_delta = datetime.timedelta(hours=9)
   dt = datetime.datetime.now(datetime.timezone.utc)+t_delta
-  return render_template("index.html",month=dt.month,day=dt.day)
+  return render_template("index.html",d_month=dt.month,d_day=dt.day)
 
 
 # postのときの処理	
