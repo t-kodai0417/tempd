@@ -7,9 +7,11 @@ app = Flask(__name__)
 def get():
   t_delta = datetime.timedelta(hours=9)
   dt = datetime.datetime.now(datetime.timezone.utc)+t_delta
+  dt_text = f"{dt.month}/{dt.day} {dt.minute}:{dt.second}"
+  
   data1 =request.args.get('name', '')
   if data1=="":
-    return render_template("index.html",d_month=dt.month,d_day=dt.day)
+    return render_template("index.html",d_month=dt.month,d_day=dt.day,d_time=dt_text)
   hyouka1 =request.args.get('j', '')
   hyouka2=request.args.get("k","")
   hyouka3=request.args.get("h","")
