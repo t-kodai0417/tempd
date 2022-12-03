@@ -12,7 +12,7 @@ def get():
   elif dt.minute < 10:
     d_minute=f"0{dt.minute}"
   else:
-    d_minute=f"{dt.minute}"
+    d_minute=f"{dt.minute}"#a
   
   dt_text = f"{dt.month}/{dt.day} {dt.hour}:{d_minute}"
   
